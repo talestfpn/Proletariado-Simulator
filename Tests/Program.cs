@@ -39,6 +39,11 @@ public static class Program
                 Calibration.Report(definition);
                 return 0;
             }
+            if (args.Contains("--campaign-calibrate"))
+            {
+                CampaignCalibration.Report(definition, args);
+                return 0;
+            }
             Check(definition.Worlds.Count == 3 && definition.Worlds.All(w => w.Producers.Count == 8), "três mundos com oito produtores nos dados");
             Check(definition.OfflineLimitHours == 8 && definition.PrestigeBonusPerPoint == .25, "limite offline e bônus de prestígio configuráveis");
             Numbers();
@@ -47,6 +52,8 @@ public static class Program
             Prestige(definition);
             Retheme(definition);
             PersistenceChecks.Run(definition, TestHarness.Check);
+            PoliticalChecks.Run(definition);
+            ThemeChecks.Run(definition);
             var run = Calibration.Simulate(definition, 1800);
             Check(run.FirstPrestigeSeconds is >= 1200 and <= 1800, $"primeiro prestígio da estratégia de reinvestimento em 20–30 min ({run.FirstPrestigeSeconds / 60:0.00} min)");
             Console.WriteLine($"{TestHarness.Checks - TestHarness.Failures}/{TestHarness.Checks} verificações aprovadas.");
@@ -241,6 +248,7 @@ public static class Program
         firstWorld["accentColor"] = "#FF00FF";
         firstWorld["glyph"] = "[]";
         firstWorld["producers"]![0]!["name"] = "Nome diferente";
+        firstWorld["producers"]![0]!["iconPath"] = "res://Assets/Icons/tema-alternativo.svg";
         var restored = new GameEngine(definition, JsonSerializer.Deserialize<GameState>(originalSave)!);
         Check(firstWorld["id"]!.GetValue<string>() == W && firstWorld["producers"]![0]!["id"]!.GetValue<string>() == P,
             "troca de nome, cor e ícone mantém IDs da apresentação");

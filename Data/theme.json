@@ -1,180 +1,823 @@
 {
-  "gameTitle": "IDLE / LAB",
-  "tagline": "Produzir. Conectar. Recomeçar.",
+  "gameTitle": "PROLETARIADO SIMULATOR",
+  "tagline": "Muito corre. Pouca folga. Um país pela frente.",
+  "protagonistName": "Zé do Corre",
+  "portraits": [
+    {
+      "id": "worker",
+      "path": "res://Assets/Art/portrait-worker.png"
+    },
+    {
+      "id": "union",
+      "path": "res://Assets/Art/portrait-union.png"
+    },
+    {
+      "id": "candidate",
+      "path": "res://Assets/Art/portrait-candidate.png"
+    },
+    {
+      "id": "president",
+      "path": "res://Assets/Art/portrait-president.png"
+    }
+  ],
   "worlds": [
     {
       "id": "world-1",
-      "name": "Setor 01",
-      "currencyName": "unidades",
-      "prestigeName": "Núcleos",
-      "accentColor": "#E6B566",
+      "name": "Corre",
+      "currencyName": "Grana do Corre",
+      "prestigeName": "Vivência",
+      "accentColor": "#B94A38",
       "glyph": "01",
+      "description": "Do café no sinal à cooperativa. O boleto não espera a consciência de classe.",
+      "backgroundPath": "res://Assets/Art/background-world-1.png",
       "producers": [
         {
           "id": "producer-1",
-          "name": "Módulo 01",
+          "name": "Café no Sinal",
           "glyph": "01",
-          "description": "Coleta inicial"
+          "iconPath": "res://Assets/Icons/world-1/producer-1.svg",
+          "description": "Um gole quente entre o vermelho e o próximo boleto.",
+          "partnerName": "Dona Cida",
+          "partnerDescription": "Ela conhece o freguês antes do sinal abrir.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Café com sustância",
+              "description": "Agora o café acorda até a esperança.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Semáforo camarada",
+              "description": "A fila anda antes da buzina começar.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Garrafa de respeito",
+              "description": "A freguesia chama pelo nome, o fiscal também.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-2",
-          "name": "Módulo 02",
+          "name": "Entrega de Bike",
           "glyph": "02",
-          "description": "Síntese básica"
+          "iconPath": "res://Assets/Icons/world-1/producer-2.svg",
+          "description": "Você pedala. O aplicativo chama isso de liberdade.",
+          "partnerName": "Júnior da Marcha",
+          "partnerDescription": "Sabe cada atalho e cada buraco da cidade.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Bagageiro de guerra",
+              "description": "Mais pedido por pedalada. Menos papo de empreendedor.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Marcha de sobrevivência",
+              "description": "A perna gira e o algoritmo sua frio.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Gorjeta organizada",
+              "description": "Um agrado que não depende de estrela.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-3",
-          "name": "Módulo 03",
+          "name": "Bico de Pedreiro",
           "glyph": "03",
-          "description": "Matriz de fluxo"
+          "iconPath": "res://Assets/Icons/world-1/producer-3.svg",
+          "description": "Levanta parede, engole poeira e faz milagre com o orçamento.",
+          "partnerName": "Mestre Naldo",
+          "partnerDescription": "Prumo na mão e história demais para o horário de almoço.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Colher de responsa",
+              "description": "Cada tijolo passa a valer a bronca.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Massa no ponto",
+              "description": "Menos espera, mesma poeira no pulmão.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Jeitinho homologado",
+              "description": "O fiscal veio, tomou café e achou tudo lindo.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-4",
-          "name": "Módulo 04",
+          "name": "Caixa do Mercado",
           "glyph": "04",
-          "description": "Câmara de impulso"
+          "iconPath": "res://Assets/Icons/world-1/producer-4.svg",
+          "description": "Passa compra, leva desaforo e ainda pergunta se tem CPF.",
+          "partnerName": "Márcia do Caixa",
+          "partnerDescription": "Ela fecha a conta enquanto resolve três pepinos.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Leitor sem drama",
+              "description": "O bip ficou mais valioso que o elogio do gerente.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Fila andando",
+              "description": "A esteira corre. O salário segue pensando.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Quebra de caixa",
+              "description": "Dessa vez o arredondamento é a nosso favor.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-5",
-          "name": "Módulo 05",
+          "name": "Auxiliar de Cozinha",
           "glyph": "05",
-          "description": "Rede de canais"
+          "iconPath": "res://Assets/Icons/world-1/producer-5.svg",
+          "description": "Se o prato saiu bonito, alguém ralou no calor do fundo.",
+          "partnerName": "Chef Bete",
+          "partnerDescription": "Comanda a panela sem romantizar o perrengue.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Tempero de firma",
+              "description": "Sabor de comida, margem de respeito.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Mise en place do povo",
+              "description": "Tudo no lugar, o patrão que procure assunto.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Prato que sustenta",
+              "description": "A marmita alimenta até a segunda-feira.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-6",
-          "name": "Módulo 06",
+          "name": "Turno na Fábrica",
           "glyph": "06",
-          "description": "Estação de integração"
+          "iconPath": "res://Assets/Icons/world-1/producer-6.svg",
+          "description": "A sirene toca e seu tempo vira número na planilha alheia.",
+          "partnerName": "Tonhão do Turno",
+          "partnerDescription": "Opera a linha e lembra a turma de beber água.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Ferramenta decente",
+              "description": "EPI não é mimo, porra. É o básico.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Linha sem engasgo",
+              "description": "A máquina ganha ritmo, a pausa continua sagrada.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Participação nos frutos",
+              "description": "Quem fez a riqueza leva um pedaço maior.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-7",
-          "name": "Módulo 07",
+          "name": "Hora Extra",
           "glyph": "07",
-          "description": "Núcleo de expansão"
+          "iconPath": "res://Assets/Icons/world-1/producer-7.svg",
+          "description": "O relógio bate. Você também, de leve, na mesa.",
+          "partnerName": "Lúcia do Ponto",
+          "partnerDescription": "Registra cada minuto e guarda todos os comprovantes.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Adicional na veia",
+              "description": "A hora ficou cara do jeito certo.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Ponto sem suspense",
+              "description": "Bateu, registrou. Sem favor para o sistema.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Banco de horas pago",
+              "description": "Milagre: o banco de horas liberou saque.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-8",
-          "name": "Módulo 08",
+          "name": "Cooperativa do Bairro",
           "glyph": "08",
-          "description": "Complexo de convergência"
+          "iconPath": "res://Assets/Icons/world-1/producer-8.svg",
+          "description": "O lucro agora tem assembleia e a chave fica com a vizinhança.",
+          "partnerName": "Seu Dito",
+          "partnerDescription": "Organiza a escala e desconfia de palestra motivacional.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Compra em conjunto",
+              "description": "A união corta o custo e aumenta o retorno.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Escala combinada",
+              "description": "Ninguém fica refém do áudio de madrugada.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Sobras repartidas",
+              "description": "Quando sobra, sobra para quem fez.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         }
       ]
     },
     {
       "id": "world-2",
-      "name": "Setor 02",
-      "currencyName": "pulsos",
-      "prestigeName": "Núcleos",
-      "accentColor": "#73C9B7",
+      "name": "Sindicato",
+      "currencyName": "Fundo Sindical",
+      "prestigeName": "Respeito da Base",
+      "accentColor": "#287366",
       "glyph": "02",
+      "description": "A base se organiza. Vai ter café ralo, plenária longa e patrão nervoso.",
+      "backgroundPath": "res://Assets/Art/background-world-2.png",
       "producers": [
         {
           "id": "producer-1",
-          "name": "Módulo 01",
+          "name": "Vaquinha da Firma",
           "glyph": "01",
-          "description": "Coleta inicial"
+          "iconPath": "res://Assets/Icons/world-2/producer-1.svg",
+          "description": "Um pouco de cada um. O bastante para ninguém cair sozinho.",
+          "partnerName": "Rita do Pix",
+          "partnerDescription": "Confere os centavos sem sumir com o recibo.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Pix com propósito",
+              "description": "O caixa cresce sem passar chapéu de luxo.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Lista que fecha",
+              "description": "A contribuição chega antes do lembrete passivo-agressivo.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Troco da solidariedade",
+              "description": "Centavos juntos fazem um barulho danado.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-2",
-          "name": "Módulo 02",
+          "name": "Panfleto na Porta",
           "glyph": "02",
-          "description": "Síntese básica"
+          "iconPath": "res://Assets/Icons/world-2/producer-2.svg",
+          "description": "O sol nem nasceu e o segurança já está de cara feia.",
+          "partnerName": "Beto do Portão",
+          "partnerDescription": "Entrega argumento com a mesma mão que segura o café.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Tinta que pega",
+              "description": "Panfleto que a pessoa lê antes de amassar.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Dobra ligeira",
+              "description": "Mais papel na mão, menos vento no saco.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Texto sem juridiquês",
+              "description": "Agora até a letra miúda faz sentido.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-3",
-          "name": "Módulo 03",
+          "name": "Reunião de Base",
           "glyph": "03",
-          "description": "Matriz de fluxo"
+          "iconPath": "res://Assets/Icons/world-2/producer-3.svg",
+          "description": "A pauta tem três itens. A discussão tem dezenove.",
+          "partnerName": "Sol da Pauta",
+          "partnerDescription": "Dá a palavra, puxa o horário e corta o discurso eterno.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Microfone aberto",
+              "description": "Mais gente fala. O argumento ganha peso.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Essa reunião podia ser um áudio",
+              "description": "O debate anda sem virar monólogo do mesmo sujeito.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Ata sem sumiço",
+              "description": "O que foi combinado não evapora no cafezinho.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-4",
-          "name": "Módulo 04",
+          "name": "Caixa de Resistência",
           "glyph": "04",
-          "description": "Câmara de impulso"
+          "iconPath": "res://Assets/Icons/world-2/producer-4.svg",
+          "description": "A greve pode durar. A geladeira não negocia prazo.",
+          "partnerName": "Paulo do Cofre",
+          "partnerDescription": "A senha é coletiva e o extrato também.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Reserva de fôlego",
+              "description": "A paralisação aguenta mais uma rodada.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Repasse sem novela",
+              "description": "A ajuda chega antes da cobrança.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Prestação na parede",
+              "description": "Transparência dá trabalho. Desvio dá mais.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-5",
-          "name": "Módulo 05",
+          "name": "Assembleia",
           "glyph": "05",
-          "description": "Rede de canais"
+          "iconPath": "res://Assets/Icons/world-2/producer-5.svg",
+          "description": "Braço levantado, garganta rouca e alguém pedindo questão de ordem.",
+          "partnerName": "Vera da Mesa",
+          "partnerDescription": "Consegue contar votos no meio de um coro.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Palavra da base",
+              "description": "Uma sala cheia pesa mais na negociação.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Voto bem contado",
+              "description": "Menos confusão, mais decisão.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Mandato vigiado",
+              "description": "Representar não vem com cheque em branco.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-6",
-          "name": "Módulo 06",
+          "name": "Carro de Som",
           "glyph": "06",
-          "description": "Estação de integração"
+          "iconPath": "res://Assets/Icons/world-2/producer-6.svg",
+          "description": "O bairro inteiro vai saber. Até quem pediu silêncio.",
+          "partnerName": "DJ Sirene",
+          "partnerDescription": "Regula o grave e carrega a extensão de vinte metros.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Grave na luta",
+              "description": "O recado atravessa o muro da firma.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Passagem de som",
+              "description": "Sem microfonia no meio da palavra importante.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Volume da categoria",
+              "description": "Agora o patrão também escuta do estacionamento.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-7",
-          "name": "Módulo 07",
+          "name": "Mesa de Negociação",
           "glyph": "07",
-          "description": "Núcleo de expansão"
+          "iconPath": "res://Assets/Icons/world-2/producer-7.svg",
+          "description": "De um lado a planilha. Do outro, quem fez os números existirem.",
+          "partnerName": "Dra. Neide",
+          "partnerDescription": "Lê a cláusula que tentaram esconder na página quarenta.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Cláusula afiada",
+              "description": "Cada vírgula vale mais no bolso da base.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Rodada objetiva",
+              "description": "Menos reunião para marcar outra reunião.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Acordo de verdade",
+              "description": "Assinou? Então cumpra, caralho.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-8",
-          "name": "Módulo 08",
+          "name": "Central dos Trabalhadores",
           "glyph": "08",
-          "description": "Complexo de convergência"
+          "iconPath": "res://Assets/Icons/world-2/producer-8.svg",
+          "description": "Organizar a cidade é difícil. Organizar os grupos de mensagem é pior.",
+          "partnerName": "Gil da Central",
+          "partnerDescription": "Faz ponte entre categorias sem vender a travessia.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Agenda em comum",
+              "description": "A pauta vira uma voz maior.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Articulação ligeira",
+              "description": "A mensagem chega antes de virar boato.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Força de categoria",
+              "description": "Juntos, até o gabinete devolve ligação.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         }
       ]
     },
     {
       "id": "world-3",
-      "name": "Setor 03",
-      "currencyName": "sinais",
-      "prestigeName": "Núcleos",
-      "accentColor": "#A99BE8",
+      "name": "Brasília",
+      "currencyName": "Verba de Brasília",
+      "prestigeName": "Capital Político",
+      "accentColor": "#B58430",
       "glyph": "03",
+      "description": "Do bairro ao plenário. A cadeira melhora; a contradição ganha ar-condicionado.",
+      "backgroundPath": "res://Assets/Art/background-world-3.png",
       "producers": [
         {
           "id": "producer-1",
-          "name": "Módulo 01",
+          "name": "Santinho de Campanha",
           "glyph": "01",
-          "description": "Coleta inicial"
+          "iconPath": "res://Assets/Icons/world-3/producer-1.svg",
+          "description": "Um rosto sorridente, três promessas e cinco centavos de papel.",
+          "partnerName": "Naná da Gráfica",
+          "partnerDescription": "Entrega o lote antes de o candidato mudar a foto.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Sorriso impresso",
+              "description": "Seu rosto aparece sem parecer foto de documento.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Guilhotina afiada",
+              "description": "A tiragem sai antes do próximo jingle.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Promessa em alta definição",
+              "description": "O plano é nítido. A execução a gente conversa.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-2",
-          "name": "Módulo 02",
+          "name": "Cabo Eleitoral",
           "glyph": "02",
-          "description": "Síntese básica"
+          "iconPath": "res://Assets/Icons/world-3/producer-2.svg",
+          "description": "O tio que conhece todo mundo agora tem uma planilha.",
+          "partnerName": "Duda do Território",
+          "partnerDescription": "Sabe quem mudou de rua e quem cansou de promessa.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Contato de confiança",
+              "description": "Uma indicação vale mais que dez outdoors.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Rota de porta em porta",
+              "description": "Menos sola gasta para achar a mesma casa.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Conversa que rende",
+              "description": "O aperto de mão vem com cobrança.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-3",
-          "name": "Módulo 03",
+          "name": "Comitê de Bairro",
           "glyph": "03",
-          "description": "Matriz de fluxo"
+          "iconPath": "res://Assets/Icons/world-3/producer-3.svg",
+          "description": "Cadeira de plástico, extensão duvidosa e esperança de aluguel.",
+          "partnerName": "Celina do Comitê",
+          "partnerDescription": "A chave fica com ela. E o carregador também.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Faixa na fachada",
+              "description": "Agora dá para achar o comitê sem pedir localização.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Escala de voluntários",
+              "description": "Sempre tem alguém para abrir a porta.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Base de verdade",
+              "description": "O bairro deixa de ser só cenário de campanha.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-4",
-          "name": "Módulo 04",
+          "name": "Comício",
           "glyph": "04",
-          "description": "Câmara de impulso"
+          "iconPath": "res://Assets/Icons/world-3/producer-4.svg",
+          "description": "O palanque sobe. A pressão de falar bonito também.",
+          "partnerName": "Chico do Microfone",
+          "partnerDescription": "Entrega o som e segura o candidato pelo horário.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Discurso no ponto",
+              "description": "A promessa encontra verbo e sujeito.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Jingle sem fim",
+              "description": "Chiclete eleitoral em velocidade industrial.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Praça cheia",
+              "description": "Até a câmera aberta pega gente no fundo.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-5",
-          "name": "Módulo 05",
+          "name": "Palanque Regional",
           "glyph": "05",
-          "description": "Rede de canais"
+          "iconPath": "res://Assets/Icons/world-3/producer-5.svg",
+          "description": "Cabe muita gente na foto. Na pauta, a briga é maior.",
+          "partnerName": "Lena da Estrada",
+          "partnerDescription": "Costura a agenda e cobra pedágio de atenção.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Mapa da caminhada",
+              "description": "O trajeto para de girar em torno do aeroporto.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Bate-volta estratégico",
+              "description": "Mais cidade por quilômetro de estrada.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Aliança no interior",
+              "description": "A região aparece além do mapa de votos.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-6",
-          "name": "Módulo 06",
+          "name": "Gabinete",
           "glyph": "06",
-          "description": "Estação de integração"
+          "iconPath": "res://Assets/Icons/world-3/producer-6.svg",
+          "description": "A porta agora tem seu nome. E uma fila que não acaba.",
+          "partnerName": "Assis da Agenda",
+          "partnerDescription": "Filtra as reuniões sem filtrar a realidade.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Caneta com tinta",
+              "description": "O papel anda. O carimbo fica com inveja.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Despacho sem gaveta",
+              "description": "Protocolo deixa de ser cemitério de pedido.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Janela para a rua",
+              "description": "A vista do gabinete alcança a calçada.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-7",
-          "name": "Módulo 07",
+          "name": "Coalizão",
           "glyph": "07",
-          "description": "Núcleo de expansão"
+          "iconPath": "res://Assets/Icons/world-3/producer-7.svg",
+          "description": "Para governar precisa de apoio. Para dormir, de consciência.",
+          "partnerName": "Tereza da Ponte",
+          "partnerDescription": "Costura acordo sem fingir que a linha é invisível.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Maioria com pauta",
+              "description": "A conta fecha e a proposta passa.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Telefone atendido",
+              "description": "Sem vinte recados para marcar uma conversa.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Acordo à luz do dia",
+              "description": "A contradição continua, pelo menos dá para ler.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         },
         {
           "id": "producer-8",
-          "name": "Módulo 08",
+          "name": "Rede Nacional",
           "glyph": "08",
-          "description": "Complexo de convergência"
+          "iconPath": "res://Assets/Icons/world-3/producer-8.svg",
+          "description": "Agora até o grupo da família discute sua cara na televisão.",
+          "partnerName": "Ivo do Sinal",
+          "partnerDescription": "Põe a mensagem no ar e o ego no silencioso.",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "name": "Antena no povo",
+              "description": "A mensagem atravessa o país com legenda.",
+              "effect": "Rendimento ×2"
+            },
+            {
+              "id": "speed-1",
+              "name": "Grade afinada",
+              "description": "O recado chega antes do corte maldoso.",
+              "effect": "Velocidade ×2 · duração ÷2"
+            },
+            {
+              "id": "output-2",
+              "name": "Voz de alcance",
+              "description": "Falar para milhões inclui ouvir de volta.",
+              "effect": "Rendimento ×3"
+            }
+          ]
         }
       ]
+    }
+  ],
+  "campaignEvents": [
+    {
+      "officeId": "vereador",
+      "decisionIndex": 1,
+      "title": "A primeira fila",
+      "description": "O bairro pede ônibus. O assessor sugere uma foto dentro de um.",
+      "baseChoice": "Ouvir a fila do ponto",
+      "personalChoice": "Pagar uma sessão de fotos"
+    },
+    {
+      "officeId": "vereador",
+      "decisionIndex": 2,
+      "title": "O dono do microfone",
+      "description": "A reunião tem vinte problemas e um candidato querendo falar de si.",
+      "baseChoice": "Dar o microfone à vizinhança",
+      "personalChoice": "Gravar o próprio discurso"
+    },
+    {
+      "officeId": "deputado",
+      "decisionIndex": 1,
+      "title": "A emenda e o remendo",
+      "description": "A base quer verba na escola. A equipe quer um outdoor com seu nome.",
+      "baseChoice": "Construir a proposta com a escola",
+      "personalChoice": "Construir um slogan imenso"
+    },
+    {
+      "officeId": "deputado",
+      "decisionIndex": 2,
+      "title": "Pauta de corredor",
+      "description": "Chegou uma pauta difícil. Aparecer na TV é mais fácil que explicá-la.",
+      "baseChoice": "Abrir debate com a categoria",
+      "personalChoice": "Reservar o horário da entrevista"
+    },
+    {
+      "officeId": "governador",
+      "decisionIndex": 1,
+      "title": "Asfalto com plateia",
+      "description": "O interior pede estrada inteira. A comitiva achou dez metros ótimos para filmar.",
+      "baseChoice": "Levar a equipe técnica à região",
+      "personalChoice": "Levar a equipe de filmagem"
+    },
+    {
+      "officeId": "governador",
+      "decisionIndex": 2,
+      "title": "O palácio tem eco",
+      "description": "Tem gente lá fora pedindo resposta. Aqui dentro elogiam sua gravata.",
+      "baseChoice": "Abrir audiência com a base",
+      "personalChoice": "Encomendar um retrato oficial"
+    },
+    {
+      "officeId": "presidente",
+      "decisionIndex": 1,
+      "title": "Faixa ou faixa de protesto",
+      "description": "A praça encheu. Dá para ouvir o povo ou escutar só a assessoria.",
+      "baseChoice": "Negociar com quem veio da estrada",
+      "personalChoice": "Preparar a tomada de posse"
+    },
+    {
+      "officeId": "presidente",
+      "decisionIndex": 2,
+      "title": "A cadeira que gira",
+      "description": "Zé percebe que a cadeira do poder gira bem mais que a da fábrica.",
+      "baseChoice": "Assinar compromissos públicos",
+      "personalChoice": "Ensaiar o discurso histórico"
     }
   ]
 }

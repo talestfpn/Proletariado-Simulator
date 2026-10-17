@@ -1,0 +1,64 @@
+{
+  "tool": "image_gen.imagegen (built-in)",
+  "palette": {
+    "paper": "#F4E7C6",
+    "brick": "#BD3B32",
+    "petroleum": "#245A57",
+    "mustard": "#E8AF37",
+    "ink": "#252523"
+  },
+  "assets": [
+    {
+      "id": "portrait-worker",
+      "file": "Assets/Art/portrait-worker.png",
+      "mode": "generate",
+      "transparent": true,
+      "prompt": "Original game character portrait, transparent cutout PNG, chest-up portrait centered, square composition. Ze do Corre, fictional Brazilian working class man age 38, medium warm brown skin, short dark wavy hair with one unruly curl, thick expressive brows, small moustache, no beard, broad triangular nose, tired friendly crooked grin. Wearing faded petroleum-teal work shirt, small mustard patch on pocket, rolled sleeves, holding enamel coffee mug. Brazilian 1960s screen printed street poster meets satirical editorial cartoon. Bold dark charcoal uneven ink contour, flat brick red/petroleum teal/mustard/cream palette, subtle print texture, exaggerated but appealing graphic shapes. Crisp professional 2D game art readable at 160 pixels, flat front view three-quarter angle. No lettering, text, symbols, logos, real political figures, borders, UI, watermark. Full head and shoulders fully visible, transparent surrounding space."
+    },
+    {
+      "id": "background-world-1",
+      "file": "Assets/Art/background-world-1.png",
+      "mode": "generate",
+      "transparent": false,
+      "prompt": "Original wide background illustration for a Brazilian idle game, 16:9 landscape. A working class Brazilian neighborhood at dawn: low houses, electricity poles and wires, tiny storefront, distant factory silhouettes, bicycle resting against a wall, bus stop at far right. Retro Brazilian screenprinted political street poster, bold simple flat shapes, thick charcoal ink edges, worn cream paper, muted mustard ochre and petroleum teal with small brick-red accents. Mostly quiet cream negative space in central 65% for game UI overlay; interesting small details confined to bottom quarter and outer edges, no dominant character. Soft low contrast, clean graphic editorial cartoon, professional illustration. No text letters numbers slogans logos real people or watermark. This is a backdrop, not a UI mockup."
+    },
+    {
+      "id": "background-world-2",
+      "file": "Assets/Art/background-world-2.png",
+      "mode": "generate",
+      "transparent": false,
+      "prompt": "Original wide background illustration for a Brazilian idle game, 16:9 landscape. A neighborhood labor union meeting hall: modest vintage industrial windows, simple chairs and table near lower edge, anonymous blank placards leaning against wall, megaphone on table, distant factory outside windows, small potted plant at side. Retro Brazilian screenprinted street poster, simple flat editorial cartoon shapes, charcoal ink outline, subtle paper grain. Muted aged cream, petroleum teal, mustard yellow and brick-red. Central 65% calm blank cream wall for UI overlay; composition details at outer edges and bottom quarter, low contrast and no people. No text letters numbers political party emblems or watermark, original image. Backdrop only, not interface."
+    },
+    {
+      "id": "background-world-3",
+      "file": "Assets/Art/background-world-3.png",
+      "mode": "generate",
+      "transparent": false,
+      "prompt": "Original wide background illustration for a Brazilian satire idle game, 16:9 landscape. A fictional grand modernist Brazilian civic square with twin geometric towers, low domed building and abstract concrete arches in far background, campaign stage at bottom left with blank placard, a few paper confetti shapes. Original architecture, not a photo. Retro 1960s Brazilian screenprinted street poster and editorial cartoon, thick charcoal ink contours, flat simplified geometry, aged cream paper, muted brick-red, mustard and petroleum teal. Central 65% very quiet pale cream sky for UI overlay, architectural objects in bottom quarter and edges, low contrast. No characters, text, letters, numbers, real party symbols, logos or watermark. Backdrop, not UI."
+    },
+    {
+      "id": "portrait-union",
+      "file": "Assets/Art/portrait-union.png",
+      "mode": "edit",
+      "reference": "Assets/Art/portrait-worker.png",
+      "transparent": true,
+      "prompt": "Keep this exact fictional character Ze do Corre: same face, skin, curly forelock, small moustache, eyebrows, age and rendering. Chest-up transparent portrait, same crop and graphic style. Replace mug with a simple cream-and-mustard megaphone resting in his hands, open-collar petroleum teal work shirt and rolled sleeves, one brick-red blank cloth badge, determined confident expression addressing a labor meeting. Original editorial cartoon, worn screen print texture and dark ink. No text logos or real party emblems."
+    },
+    {
+      "id": "portrait-candidate",
+      "file": "Assets/Art/portrait-candidate.png",
+      "mode": "edit",
+      "reference": "Assets/Art/portrait-worker.png",
+      "transparent": true,
+      "prompt": "Keep this exact fictional character Ze do Corre: same face, brown skin, curly forelock, small moustache, eyebrows, age and rendering. Chest-up transparent portrait, same crop and retro Brazilian poster graphic style. Now wearing a slightly oversized brick-red blazer over cream open-collar shirt, mustard handkerchief, holding a microphone, campaigning enthusiastic grin and one expressive raised hand. Exaggerated appealing satire, flat colors, worn screenprint texture, charcoal contour. No text, slogans, emblems, lettering or logo."
+    },
+    {
+      "id": "portrait-president",
+      "file": "Assets/Art/portrait-president.png",
+      "mode": "edit",
+      "reference": "Assets/Art/portrait-worker.png",
+      "transparent": true,
+      "prompt": "Keep this exact fictional character Ze do Corre: same face, brown skin, curly forelock, small moustache, eyebrows, age and rendering. Chest-up transparent portrait, same crop and retro Brazilian poster graphic style. Now an absurdly self-satisfied fictional president, wearing petroleum teal suit, cream shirt and mustard tie, a diagonal unbranded brick-red ceremonial sash with thin cream edges. Hands loosely clasped, broad knowing grin, slightly raised chin. Original invented costume with no actual national or party emblems. Flat rich colors, worn screenprint texture and dark charcoal ink. No text logos flags or watermark."
+    }
+  ]
+}

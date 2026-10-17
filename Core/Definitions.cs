@@ -5,6 +5,24 @@ public sealed class GameDefinition
     public double OfflineLimitHours { get; set; } = 8;
     public double PrestigeBonusPerPoint { get; set; } = .25;
     public List<WorldDefinition> Worlds { get; set; } = [];
+    public PoliticsDefinition? Politics { get; set; }
+}
+
+public sealed class PoliticsDefinition
+{
+    public string WorldId { get; set; } = "world-3";
+    public double SupportEmissionFactor { get; set; } = 1000;
+    public List<OfficeDefinition> Offices { get; set; } = [];
+}
+
+public sealed class OfficeDefinition
+{
+    public string Id { get; set; } = "";
+    public string Name { get; set; } = "";
+    public double DurationSeconds { get; set; }
+    public BigValue MoneyCost { get; set; }
+    public BigValue SupportCost { get; set; }
+    public double ProductionBonus { get; set; }
 }
 
 public sealed class WorldDefinition

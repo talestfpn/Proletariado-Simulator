@@ -1,14 +1,14 @@
 namespace Idle.Core;
 
 /// <summary>Scene-independent economy. The caller owns clocks, persistence and presentation.</summary>
-public sealed class GameEngine
+public sealed partial class GameEngine
 {
     private readonly Dictionary<string, WorldDefinition> _worlds;
     private readonly Dictionary<(string World, string Producer), ProducerDefinition> _producers;
     public GameDefinition Definition { get; }
     public GameState State { get; }
 
-    public GameEngine(GameDefinition definition, GameState? state = null)
+    public GameEngine(GameDefinition definition, GameState? state = null, Func<double>? randomSample = null)
     {
         ValidateDefinition(definition);
         Definition = definition;
@@ -16,6 +16,7 @@ public sealed class GameEngine
         _producers = definition.Worlds.SelectMany(world => world.Producers.Select(producer =>
             new KeyValuePair<(string, string), ProducerDefinition>((world.Id, producer.Id), producer))).ToDictionary();
         State = state ?? CreateInitialState(definition);
+        _randomSample = randomSample ?? Random.Shared.NextDouble;
         if (!ValidateState(definition, State, out var error)) throw new ArgumentException(error, nameof(state));
     }
 
@@ -23,6 +24,33 @@ public sealed class GameEngine
     {
         if (!double.IsFinite(seconds) || seconds < 0) throw new ArgumentOutOfRangeException(nameof(seconds));
         if (offline) seconds = Math.Min(seconds, Definition.OfflineLimitHours * 3600);
+        var gains = new Dictionary<string, BigValue>(StringComparer.Ordinal);
+        var remaining = seconds;
+        while (remaining > 0)
+        {
+            var campaign = State.Politics.ActiveCampaign;
+            var campaignAdvances = campaign is not null && !campaign.PendingDecision;
+            var boundary = campaignAdvances ? NextCampaignBoundary(campaign!) : double.PositiveInfinity;
+            var interval = Math.Min(remaining, boundary);
+            AccumulateGains(gains, AdvanceEconomy(interval, offline));
+            remaining = Math.Max(0, remaining - interval);
+            if (campaignAdvances)
+            {
+                campaign!.ElapsedSeconds = Math.Min(campaign.DurationSeconds, campaign.ElapsedSeconds + interval);
+                if (campaign.ElapsedSeconds >= campaign.DurationSeconds - 1e-9 && campaign.Choices.Count == 2)
+                    ResolveCampaign(campaign);
+            }
+            if (interval == 0 && ReferenceEquals(campaign, State.Politics.ActiveCampaign)) break;
+        }
+        // Keep zero-time advances useful after a migration or direct state restoration.
+        SynchronizePoliticalSupport();
+        foreach (var world in Definition.Worlds)
+            if (State.Worlds[world.Id].Unlocked) gains.TryAdd(world.Id, BigValue.Zero);
+        return gains;
+    }
+
+    private Dictionary<string, BigValue> AdvanceEconomy(double seconds, bool offline)
+    {
         var gains = new Dictionary<string, BigValue>(StringComparer.Ordinal);
         foreach (var worldDefinition in Definition.Worlds)
         {
@@ -71,6 +99,7 @@ public sealed class GameEngine
             world.LifetimeEarnings += earned;
             gains[worldDefinition.Id] = earned;
         }
+        SynchronizePoliticalSupport();
         return gains;
     }
 
@@ -154,7 +183,7 @@ public sealed class GameEngine
     {
         var definition = GetProducerDefinition(worldId, producerId);
         var producer = GetProducerState(worldId, producerId);
-        var payout = definition.BasePayout * producer.Quantity * GetPrestigeMultiplier(worldId);
+        var payout = definition.BasePayout * producer.Quantity * GetPrestigeMultiplier(worldId) * GetGlobalProductionMultiplier();
         foreach (var upgrade in definition.Upgrades)
             if (producer.PurchasedUpgrades.Contains(upgrade.Id)) payout *= upgrade.ProductionMultiplier;
         foreach (var milestone in definition.Milestones)
@@ -197,6 +226,7 @@ public sealed class GameEngine
     public bool Prestige(string worldId)
     {
         var world = GetWorldState(worldId);
+        if (Definition.Politics?.WorldId == worldId && State.Politics.ActiveCampaign is not null) return false;
         var reward = PreviewPrestige(worldId);
         if (reward.IsZero || world.PrestigeCount == int.MaxValue) return false;
         world.PrestigePoints += reward;
@@ -270,7 +300,7 @@ public sealed class GameEngine
                 { error = "Invalid producer quantity, cycle or upgrade state."; return false; }
             }
         }
-        return true;
+        return ValidatePoliticsState(definition, state, out error);
     }
 
     public static void ValidateDefinition(GameDefinition definition)
@@ -301,6 +331,7 @@ public sealed class GameEngine
                         throw new ArgumentException("Invalid or duplicate milestone definition.", nameof(definition));
             }
         }
+        ValidatePoliticsDefinition(definition);
     }
 
     private static bool IsMultiplier(double value) => double.IsFinite(value) && value >= 1;

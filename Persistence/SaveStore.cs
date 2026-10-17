@@ -9,10 +9,11 @@ public sealed record LoadResult(GameEngine Engine, Dictionary<string, BigValue> 
 /// <summary>Local snapshots. State and UTC timestamp are committed together.</summary>
 public sealed class SaveStore
 {
-    public const int CurrentVersion = 1;
+    public const int CurrentVersion = 2;
     private readonly string _directory;
     private readonly GameDefinition _definition;
     private bool _primaryIsValid;
+    private DateTimeOffset _lastSavedAtUtc;
     public string SavePath => Path.Combine(_directory, "save.json");
     public string BackupPath => Path.Combine(_directory, "save.backup.json");
 
@@ -56,6 +57,7 @@ public sealed class SaveStore
         }
 
         var engine = new GameEngine(_definition, envelope.State);
+        _lastSavedAtUtc = envelope.SavedAtUtc;
         double seconds = Math.Clamp((now - envelope.SavedAtUtc).TotalSeconds, 0, _definition.OfflineLimitHours * 3600);
         if (envelope.SavedAtUtc > now)
             notice = Append(notice, "O relógio voltou no tempo; nenhum ganho offline foi aplicado.");
@@ -70,6 +72,9 @@ public sealed class SaveStore
         if (!GameEngine.ValidateState(_definition, engine.State, out var validationError))
             throw new InvalidDataException(validationError);
         Directory.CreateDirectory(_directory);
+        now = now.ToUniversalTime();
+        // A rolled-back system clock must not move the offline checkpoint backwards.
+        if (now < _lastSavedAtUtc) now = _lastSavedAtUtc;
         string temporary = Path.Combine(_directory, "save.tmp.json");
         var envelope = new SaveEnvelope
         {
@@ -95,6 +100,7 @@ public sealed class SaveStore
                 File.Move(temporary, SavePath);
             }
             _primaryIsValid = true;
+            _lastSavedAtUtc = envelope.SavedAtUtc;
         }
         finally
         {
@@ -117,10 +123,15 @@ public sealed class SaveStore
                 ?? throw new InvalidDataException("Save vazio.");
             if (envelope.Version > CurrentVersion)
                 throw new NotSupportedException("Este save foi criado por uma versão mais recente do jogo. Os arquivos foram preservados.");
-            if (envelope.Version != CurrentVersion)
+            if (envelope.Version != 1 && envelope.Version != CurrentVersion)
                 throw new InvalidDataException($"Versão de save não suportada: {envelope.Version}.");
             if (envelope.SavedAtUtc == default || envelope.State == null)
                 throw new InvalidDataException("Snapshot incompleto.");
+            if (envelope.Version == 1)
+            {
+                GameEngine.MigrateVersion1State(_definition, envelope.State);
+                envelope.Version = CurrentVersion;
+            }
             if (!GameEngine.ValidateState(_definition, envelope.State, out var validationError))
                 throw new InvalidDataException(validationError);
             return envelope;

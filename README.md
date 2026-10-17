@@ -1,95 +1,94 @@
-# Idle Lab
+# Proletariado Simulator
 
-Base idle para Windows em **Godot 4.7.1 .NET / C# / .NET 8**. São três mundos independentes com oito produtores cada, produção por ciclos, automação, melhorias, marcos e prestígio. A apresentação usa placeholders neutros e pode ser substituída sem alterar as regras.
+**Do ponto batido ao palanque.** Um idle satírico brasileiro em **Godot 4.7.1 .NET / C# / .NET 8**. Zé do Corre começa nos bicos, organiza a base e chega à disputa pelo poder. Arte de cartaz retrô, três mundos com oito atividades e carreira política até a Presidência.
 
 ## Jogar
 
-- **Versão Windows:** abra `artifacts/windows/IdleLab.exe`. Mantenha a pasta `data_IdleLab_windows_x86_64` ao lado do executável, caso seja criada pela exportação. A distribuição inclui o runtime .NET.
-- **Editor:** importe `project.godot` no Godot **.NET**, compile pelo botão de build e pressione **F6** em `Scenes/Main.tscn` ou **F5** para executar o projeto.
-- **PowerShell:** execute `./run.ps1`. O script procura o Godot .NET no PATH, em `GODOT4` e nas pastas Godot .NET de Downloads. Também aceita `./run.ps1 -GodotPath 'C:\caminho\Godot_mono.exe'`.
+- **Windows:** abra `artifacts/windows/Proletariado Simulator.exe`. Mantenha a pasta de dados que acompanha o executável. A exportação inclui o runtime .NET. Para transportar a distribuição, extraia todo o conteúdo de `artifacts/Proletariado-Simulator-Windows.zip`.
+- **Godot:** importe `project.godot` na edição **.NET**, compile e pressione F5.
+- **PowerShell:** execute `./run.ps1`. Para indicar o editor, use `./run.ps1 -GodotPath 'C:\caminho\Godot_mono.exe'`.
 
-Para desenvolver, instale o SDK .NET 8 x64 e use a edição .NET do Godot. A primeira compilação restaura pacotes NuGet. O jogo e os saves funcionam localmente, sem serviços online.
+O jogo é local, sem conta, monetização ou serviços online. O humor inclui palavrões e sátira política com personagens fictícios.
 
-## Como jogar
+## Do corre à Presidência
 
-1. Clique em **Iniciar** para executar um ciclo do primeiro produtor, recebido gratuitamente.
-2. Reinvista nos botões de compra. O seletor oferece **1, 10, 100 e Máximo**; lotes fixos exigem o valor inteiro disponível.
-3. Compre **Auto** para repetir os ciclos, inclusive quando outro mundo estiver selecionado ou o jogo estiver fechado.
-4. Clique no nome de um produtor para selecionar suas melhorias no painel direito. Os marcos de 25, 50, 100, 200, 400 e 800 unidades dobram cumulativamente seu rendimento.
-5. Acumule ganhos brutos para habilitar o **prestígio**. A janela de confirmação mostra o que será perdido e mantido.
+1. Clique na barra da primeira atividade para iniciar um ciclo. A conclusão paga recursos.
+2. Reinvista com **1, 10, 100 ou Máximo**. Lotes fixos exigem o valor inteiro; Máximo calcula a quantidade que cabe no saldo.
+3. Contrate **Parceiros** para automatizar atividades, inclusive nos mundos não selecionados e durante a ausência.
+4. Compre melhorias e alcance marcos de quantidade. As melhorias mostram nomes, piadas e efeitos numéricos.
+5. Faça **Prestígio** com recompensa positiva. O primeiro prestígio de Corre libera Sindicato; o primeiro de Sindicato libera Brasília.
+6. Em Brasília, acumule **Apoio Político**, invista em campanhas e dispute Vereador, Deputado, Governador e Presidente.
 
-O primeiro prestígio de um mundo libera o seguinte. Os mundos anteriores continuam produzindo. A produção por segundo exibida no topo considera apenas os produtores automatizados; produtores manuais pagam ao completar o ciclo iniciado.
+Os caixas **Grana do Corre, Fundo Sindical e Verba de Brasília** são independentes. Comprar atividades representa ampliar frentes de produção; os três mundos avançam juntos.
 
-## Economia e prestígio
+## Regras econômicas
 
-`Data/balance.json` contém os parâmetros, separados da apresentação:
-
-| Campo | Função |
-| --- | --- |
-| `offlineLimitHours` | Limite de produção offline; padrão 8 horas |
-| `prestigeBonusPerPoint` | Bônus aditivo de produção por ponto; padrão 0,25 |
-| `worlds[].prestigeScale` | Escala de ganhos para o prestígio daquele mundo |
-| `baseCost`, `costGrowth` | Custo inicial e crescimento geométrico do preço |
-| `basePayout`, `cycleSeconds` | Rendimento por unidade/ciclo e duração base |
-| `automationCost` | Preço para repetir os ciclos automaticamente |
-| `upgrades`, `milestones` | Melhorias compráveis e bônus por quantidade |
-
-Valores monetários usam **strings com ponto decimal**, por exemplo `"4"`, `"7.5e7"` ou `"1e400"`. O tipo `BigValue` guarda mantissa e expoente, com precisão aproximada de 15–16 dígitos significativos; não usa inteiros de precisão arbitrária.
-
-O próximo preço de um produtor é `baseCost × costGrowth^quantidade`. O lote soma a sequência geométrica, sem arredondamentos intermediários. A unidade gratuita já conta na quantidade. Os pagamentos combinam quantidade, rendimento base, melhorias, marcos e multiplicador de prestígio.
+Os preços seguem `baseCost × costGrowth^quantidade`. O custo do lote é a soma geométrica dos preços individuais. A unidade gratuita já conta no índice do preço.
+O pagamento combina quantidade, rendimento base, melhorias, marcos, prestígio e bônus político global. Alterações de velocidade preservam a proporção concluída do ciclo. A produção por segundo contabiliza atividades automatizadas.
 
 ```text
-pontos disponíveis = max(0, floor(sqrt(ganhos brutos acumulados / escala)) − pontos concedidos)
-multiplicador permanente = 1 + pontos concedidos × bônus por ponto
+pontos disponíveis = max(0, floor(sqrt(ganhos brutos históricos / escala)) − pontos concedidos)
+multiplicador do mundo = 1 + pontos concedidos × 0,25
 ```
 
-Compras não reduzem os ganhos brutos acumulados. Prestígio exige pontos positivos e zera apenas o saldo, as quantidades, melhorias, automações e ciclos do mundo reiniciado, restaurando a unidade gratuita. Mantém pontos, histórico bruto e mundos liberados. Os outros mundos permanecem intactos.
+Os ganhos históricos incluem recursos gastos. Prestigiar zera saldo, atividades, melhorias, parceiros e ciclos somente daquele mundo, devolvendo a unidade inicial. Preserva histórico, pontos, política e mundos liberados. O primeiro prestígio do Corre foi calibrado para cerca de 25 minutos de reinvestimento ativo.
+Valores monetários usam `BigValue`, mantissa e expoente com aproximadamente 15–16 dígitos significativos. Nos JSONs, use strings como `"7.5e7"` ou `"1e400"`.
 
-A primeira run do Setor 01 foi calibrada para **25,079 minutos** até o primeiro ponto. A simulação reinicia produtores ociosos a cada 0,25 s, compra automações quando disponíveis e escolhe a unidade ou melhoria com maior produção marginal por custo, aguardando saldo quando necessário. O tempo de uma pessoa varia conforme suas decisões. Os Setores 02 e 03 usam outros perfis de custos e ciclos e ainda podem ser rebalanceados.
+## Política
 
-## Trocar o tema
+A carreira abre com Brasília. O apoio é emitido pela diferença entre o total calculado a partir dos ganhos históricos e o total já emitido; gastar apoio ou prestigiar não emite novamente o mesmo recurso.
 
-Edite `Data/theme.json`: título, subtítulo, nomes dos mundos, moedas, prestígio, produtores, descrições, glifos e cores. **Preserve os IDs.** Eles conectam apresentação, regras e save; nomes exibidos não são usados pelos cálculos.
+```text
+apoio total emitível = floor(2000 × sqrt(ganhos históricos de Brasília / escala de prestígio))
+```
 
-Os ícones atuais são formas e glifos. Para usar imagens, adicione PNGs ou SVGs à pasta `Assets/` e preencha o campo opcional `iconPath` do mundo ou produtor no tema, por exemplo `"res://Assets/modulo.png"`. O Godot importa os recursos; a próxima exportação os inclui. Sem `iconPath`, permanece o placeholder. Cenas e estilos podem ser alterados sem mexer em `Core/`.
+| Cargo | Duração | Apoio básico | Verba básica | Bônus global |
+| --- | --- | --- | --- | --- |
+| Vereador | 10 min | 100 | 1 milhão | +10% |
+| Deputado | 12 min | 400 | 100 milhões | +15% |
+| Governador | 14 min | 1.200 | 10 bilhões | +20% |
+| Presidente | 15 min | 3.000 | 1 trilhão | +30% |
 
-As cores dos mundos ficam no tema; as cores de superfície e os textos genéricos dos controles ficam na interface. Trocar nomes, glifos e cores preserva o save. Alterar IDs, remover produtores ou mudar a estrutura do estado exige uma migração explícita.
+**Normal, Reforçado e Tudo no Palanque** investem 1×/2×/4× de dinheiro e apoio, com chance inicial de 55%/65%/75%. O pagamento acontece no início.
+Em ⅓ e ⅔ da campanha, uma decisão pausa seu relógio. Fortalecer a base adiciona **10 pontos percentuais de chance**; priorizar projeção pessoal adiciona **5 pontos percentuais de bônus permanente se houver vitória**. A chance é limitada a 90%.
+O sorteio é salvo ao iniciar e comparado à chance final na votação. Derrota ou cancelamento perde somente o investimento. Cada cargo pode ser conquistado uma vez, em sequência; cargos anteriores permanecem. Os bônus políticos se somam, formando um multiplicador global. A Presidência conclui a história e permite continuar o idle.
+O prestígio de Brasília aguarda terminar ou cancelar uma campanha ativa. Sua produção e suas compras continuam funcionando.
 
-## Saves
+## Save e retorno
 
-O Godot grava em `user://`; no Windows, normalmente `%APPDATA%\Godot\app_userdata\Idle Lab\`:
+O save **v2** migra o formato v1 automaticamente. Um save antigo recebe apoio correspondente ao histórico de Brasília, sem cargos ou bônus retroativos.
+O diretório `user://` foi fixado em `%APPDATA%\Godot\app_userdata\Idle Lab\` para preservar o progresso, mesmo com o novo nome. Há `save.json` e `save.backup.json`, escrita temporária, flush e substituição atômica. Salva a cada 30 segundos, após ações importantes e ao fechar; falhas de gravação são informadas.
+O retorno concede até **oito horas** somente às atividades automatizadas, uma única vez. A campanha avança até a primeira decisão pendente; o restante daquele intervalo não fica acumulado para a próxima escolha. Depois da segunda decisão, a votação pode acontecer offline. Ganhos e bônus são aplicados na ordem temporal correta.
+Relógio retrocedido não avança o checkpoint para trás. Saves locais não incluem proteção antitrapaça nem coordenação de múltiplas instâncias.
 
-- `save.json`: snapshot versionado com estado e instante UTC.
-- `save.backup.json`: snapshot válido anterior, usado se o principal estiver corrompido.
+## Alterar tema e balanceamento
 
-O save usa arquivo temporário, flush e substituição atômica. Salva a cada 30 segundos, após ações de compra/prestígio e ao fechar. Falha ao salvar é informada; o fechamento é interrompido para permitir nova tentativa. Se ambos os arquivos estiverem inválidos, o jogo os preserva e mostra o erro. Saves de versão futura também são preservados.
+- `Data/theme.json`: marca, protagonista, mundos, ícones, retratos, cenários, atividades, parceiros, melhorias e eventos. Preserve os IDs.
+- `Data/balance.json`: economia, custos, ciclos, melhorias, marcos e política (`supportEmissionFactor`, cargos, custos, durações e bônus).
+- `Assets/`: ilustrações, ícones SVG, marca e fontes com licenças OFL.
 
-Ao abrir, aplica uma única vez até 8 horas aos produtores automatizados e grava o resultado antes de exibi-lo. Ciclos manuais ficam congelados durante a ausência. Se o relógio retroceder, o ganho offline é zero. O relógio é local; esta base não inclui proteção contra manipulação de horário ou múltiplas instâncias simultâneas.
+Nomes e imagens não participam dos cálculos nem identificam o save. Os IDs de produtores se repetem entre mundos: a identidade completa é mundo + produtor + melhoria.
 
-## Estrutura e verificações
+[Arte e prompts](Docs/ARTE.md) · [Análise do original com REA e limitações](Docs/ANALISE-VISUAL.md) · [Calibração](Docs/BALANCEAMENTO.md) · [Validação da entrega](Docs/VALIDACAO.md)
 
-- `Core/`: biblioteca C# pura, definições, estado, números grandes e motor de simulação.
-- `Persistence/`: snapshots JSON e retorno offline, sem dependência do Godot.
-- `Scripts/` e `Scenes/`: interface, eventos e integração com o motor.
-- `Data/`: balanceamento e apresentação.
-- `Tests/`: verificações determinísticas sem dependências de frameworks externos.
+## Desenvolver e validar
 
 ```powershell
 dotnet build IdleLab.csproj
 dotnet run --project Tests/Idle.Tests.csproj
 dotnet run --project Tests/Idle.Tests.csproj -- --calibrate
+dotnet run --project Tests/Idle.Tests.csproj -- --campaign-calibrate --runs=100
 ./run.ps1 -SmokeTest
 ./run.ps1 -UiFlowTest
 ```
 
-O runner passou **73 verificações** de lotes, Máximo, ciclos, melhorias, marcos, tempo, mundos em paralelo, prestígio, números grandes, retematização, save, backup e offline. O smoke carrega a interface em uma pasta de save isolada e encerra após três segundos.
+`Core/` contém as regras sem Godot; `Persistence/` trata snapshots e retorno; `Scripts/` e `Scenes/` apresentam o jogo. A assembly técnica continua `IdleLab` para evitar uma renomeação desnecessária dos projetos C#.
+Validação: **133/133 verificações aprovadas**, build sem avisos ou erros, teste de abertura e fluxo gráfico completo em **1280×800 e 1100×700**. O fluxo usa saves de QA isolados, renderiza telas reais e aciona os controles do jogo; as capturas ficam em `artifacts/`, fora do Git.
 
-`-UiFlowTest` executa o fluxo gráfico em um save de QA isolado: aciona os sinais dos botões, verifica alterações de estado e rótulos, cancela/confirma prestígio e testa uma troca de tema com textura. Usa renderização real em 1280×800 e 1100×700 e grava PNGs em `artifacts/`. A revisão visual usa essas capturas; não depende de automação do mouse do Windows. As fixtures de QA só funcionam no editor/build de debug.
+Calibração final: **100/100 sementes concluídas**, mediana de **3,20 horas** do jogo novo à Presidência e percentil 90 de **4,17 horas**. Primeiro prestígio em **25,08 minutos** e Brasília em **50,40 minutos**. Estratégia: reinvestimento consistente, campanhas Normal e fortalecimento da base. O fator de emissão de apoio foi ajustado de 1000 para **2000**, preservando os custos, durações e a economia dos três mundos. Derrotas podem levar partidas além de quatro horas; método e resultados estão no relatório de calibração.
 
-Para exportar, use o preset **Windows Desktop** no editor, com os templates .NET 4.7.1 instalados. O preset inclui os arquivos JSON necessários. Pela CLI:
+Exportação com os templates .NET 4.7.1 instalados:
 
 ```powershell
-& 'C:\caminho\Godot_mono.exe' --headless --path . --export-release 'Windows Desktop' 'artifacts/windows/IdleLab.exe'
+& 'C:\caminho\Godot_mono.exe' --headless --path . --export-release 'Windows Desktop' 'artifacts/windows/Proletariado Simulator.exe'
 ```
-
-Esta versão usa progressão permanente automática. Árvore de habilidades, redistribuição de pontos, arte definitiva, áudio, monetização, eventos e serviços online ficam para etapas posteriores.

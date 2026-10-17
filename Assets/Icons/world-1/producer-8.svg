@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+<title>Proletariado Simulator — world-1/producer-8</title>
+<circle cx="49" cy="50" r="44" fill="#28362F" opacity=".14"/>
+<circle cx="47" cy="46" r="44" fill="#F4E8C8"/>
+<path d="M12 49l19-17 19 17M49 49l18-17 18 17" fill="#B94A38" stroke="#28362F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="17" y="50" width="28" height="24" rx="2" fill="#D5A344" stroke="#28362F" stroke-width="4"/><rect x="54" y="50" width="26" height="24" rx="2" fill="#287366" stroke="#28362F" stroke-width="4"/><path d="M27 73V60h8v13M63 73V60h8v13" fill="none" stroke="#28362F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 28l11-9 13 9M55 28l12-9 13 9" fill="none" stroke="#28362F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 83h67M43 25h11M49 20v11" fill="#F4E8C8" stroke="#28362F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
