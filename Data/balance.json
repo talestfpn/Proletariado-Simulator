@@ -1,0 +1,1464 @@
+{
+  "offlineLimitHours": 8,
+  "prestigeBonusPerPoint": 0.25,
+  "worlds": [
+    {
+      "id": "world-1",
+      "prestigeScale": "7.5e7",
+      "producers": [
+        {
+          "id": "producer-1",
+          "baseCost": "4",
+          "costGrowth": 1.12,
+          "basePayout": "1",
+          "cycleSeconds": 1,
+          "automationCost": "48",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "140",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "600",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "2400",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-2",
+          "baseCost": "60",
+          "costGrowth": 1.12,
+          "basePayout": "8",
+          "cycleSeconds": 4,
+          "automationCost": "720",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "2100",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "9000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "36000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-3",
+          "baseCost": "720",
+          "costGrowth": 1.12,
+          "basePayout": "80",
+          "cycleSeconds": 10,
+          "automationCost": "8640",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "25200",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "108000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "432000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-4",
+          "baseCost": "8640",
+          "costGrowth": 1.12,
+          "basePayout": "800",
+          "cycleSeconds": 20,
+          "automationCost": "103680",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "302400",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "1296000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "5184000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-5",
+          "baseCost": "103680",
+          "costGrowth": 1.12,
+          "basePayout": "6400",
+          "cycleSeconds": 35,
+          "automationCost": "1244160",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "3628800",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "15552000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "62208000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-6",
+          "baseCost": "1244160",
+          "costGrowth": 1.12,
+          "basePayout": "51200",
+          "cycleSeconds": 60,
+          "automationCost": "14929920",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "43545600",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "186624000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "746496000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-7",
+          "baseCost": "14929920",
+          "costGrowth": 1.12,
+          "basePayout": "409600",
+          "cycleSeconds": 90,
+          "automationCost": "179159040",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "522547200",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "2239488000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "8957952000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-8",
+          "baseCost": "179159040",
+          "costGrowth": 1.12,
+          "basePayout": "3276800",
+          "cycleSeconds": 120,
+          "automationCost": "2149908480",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "6270566400",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "26873856000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "107495424000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "world-2",
+      "prestigeScale": "2.25e9",
+      "producers": [
+        {
+          "id": "producer-1",
+          "baseCost": "120",
+          "costGrowth": 1.135,
+          "basePayout": "30",
+          "cycleSeconds": 0.85,
+          "automationCost": "1200",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "4200",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "18000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "72000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-2",
+          "baseCost": "1800",
+          "costGrowth": 1.135,
+          "basePayout": "240",
+          "cycleSeconds": 3.4,
+          "automationCost": "18000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "63000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "270000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "1080000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-3",
+          "baseCost": "21600",
+          "costGrowth": 1.135,
+          "basePayout": "2400",
+          "cycleSeconds": 8.5,
+          "automationCost": "216000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "756000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "3240000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "12960000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-4",
+          "baseCost": "259200",
+          "costGrowth": 1.135,
+          "basePayout": "24000",
+          "cycleSeconds": 17.0,
+          "automationCost": "2592000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "9072000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "38880000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "155520000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-5",
+          "baseCost": "3110400",
+          "costGrowth": 1.135,
+          "basePayout": "192000",
+          "cycleSeconds": 29.75,
+          "automationCost": "31104000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "108864000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "466560000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "1866240000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-6",
+          "baseCost": "37324800",
+          "costGrowth": 1.135,
+          "basePayout": "1536000",
+          "cycleSeconds": 51.0,
+          "automationCost": "373248000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "1306368000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "5598720000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "22394880000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-7",
+          "baseCost": "447897600",
+          "costGrowth": 1.135,
+          "basePayout": "12288000",
+          "cycleSeconds": 76.5,
+          "automationCost": "4478976000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "15676416000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "67184640000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "268738560000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-8",
+          "baseCost": "5374771200",
+          "costGrowth": 1.135,
+          "basePayout": "98304000",
+          "cycleSeconds": 102.0,
+          "automationCost": "53747712000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "188116992000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "806215680000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "3224862720000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "world-3",
+      "prestigeScale": "7.5e10",
+      "producers": [
+        {
+          "id": "producer-1",
+          "baseCost": "4000",
+          "costGrowth": 1.15,
+          "basePayout": "1000",
+          "cycleSeconds": 1.2,
+          "automationCost": "32000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "140000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "600000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "2400000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-2",
+          "baseCost": "60000",
+          "costGrowth": 1.15,
+          "basePayout": "8000",
+          "cycleSeconds": 4.8,
+          "automationCost": "480000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "2100000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "9000000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "36000000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-3",
+          "baseCost": "720000",
+          "costGrowth": 1.15,
+          "basePayout": "80000",
+          "cycleSeconds": 12.0,
+          "automationCost": "5760000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "25200000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "108000000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "432000000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-4",
+          "baseCost": "8640000",
+          "costGrowth": 1.15,
+          "basePayout": "800000",
+          "cycleSeconds": 24.0,
+          "automationCost": "69120000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "302400000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "1296000000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "5184000000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-5",
+          "baseCost": "103680000",
+          "costGrowth": 1.15,
+          "basePayout": "6400000",
+          "cycleSeconds": 42.0,
+          "automationCost": "829440000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "3628800000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "15552000000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "62208000000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-6",
+          "baseCost": "1244160000",
+          "costGrowth": 1.15,
+          "basePayout": "51200000",
+          "cycleSeconds": 72.0,
+          "automationCost": "9953280000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "43545600000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "186624000000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "746496000000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-7",
+          "baseCost": "14929920000",
+          "costGrowth": 1.15,
+          "basePayout": "409600000",
+          "cycleSeconds": 108.0,
+          "automationCost": "119439360000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "522547200000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "2239488000000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "8957952000000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        },
+        {
+          "id": "producer-8",
+          "baseCost": "179159040000",
+          "costGrowth": 1.15,
+          "basePayout": "3276800000",
+          "cycleSeconds": 144.0,
+          "automationCost": "1433272320000",
+          "upgrades": [
+            {
+              "id": "output-1",
+              "cost": "6270566400000",
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "id": "speed-1",
+              "cost": "26873856000000",
+              "productionMultiplier": 1,
+              "speedMultiplier": 2
+            },
+            {
+              "id": "output-2",
+              "cost": "107495424000000",
+              "productionMultiplier": 3,
+              "speedMultiplier": 1
+            }
+          ],
+          "milestones": [
+            {
+              "quantity": 25,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 50,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 100,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 200,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 400,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            },
+            {
+              "quantity": 800,
+              "productionMultiplier": 2,
+              "speedMultiplier": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

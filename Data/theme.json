@@ -1,0 +1,180 @@
+{
+  "gameTitle": "IDLE / LAB",
+  "tagline": "Produzir. Conectar. Recomeçar.",
+  "worlds": [
+    {
+      "id": "world-1",
+      "name": "Setor 01",
+      "currencyName": "unidades",
+      "prestigeName": "Núcleos",
+      "accentColor": "#E6B566",
+      "glyph": "01",
+      "producers": [
+        {
+          "id": "producer-1",
+          "name": "Módulo 01",
+          "glyph": "01",
+          "description": "Coleta inicial"
+        },
+        {
+          "id": "producer-2",
+          "name": "Módulo 02",
+          "glyph": "02",
+          "description": "Síntese básica"
+        },
+        {
+          "id": "producer-3",
+          "name": "Módulo 03",
+          "glyph": "03",
+          "description": "Matriz de fluxo"
+        },
+        {
+          "id": "producer-4",
+          "name": "Módulo 04",
+          "glyph": "04",
+          "description": "Câmara de impulso"
+        },
+        {
+          "id": "producer-5",
+          "name": "Módulo 05",
+          "glyph": "05",
+          "description": "Rede de canais"
+        },
+        {
+          "id": "producer-6",
+          "name": "Módulo 06",
+          "glyph": "06",
+          "description": "Estação de integração"
+        },
+        {
+          "id": "producer-7",
+          "name": "Módulo 07",
+          "glyph": "07",
+          "description": "Núcleo de expansão"
+        },
+        {
+          "id": "producer-8",
+          "name": "Módulo 08",
+          "glyph": "08",
+          "description": "Complexo de convergência"
+        }
+      ]
+    },
+    {
+      "id": "world-2",
+      "name": "Setor 02",
+      "currencyName": "pulsos",
+      "prestigeName": "Núcleos",
+      "accentColor": "#73C9B7",
+      "glyph": "02",
+      "producers": [
+        {
+          "id": "producer-1",
+          "name": "Módulo 01",
+          "glyph": "01",
+          "description": "Coleta inicial"
+        },
+        {
+          "id": "producer-2",
+          "name": "Módulo 02",
+          "glyph": "02",
+          "description": "Síntese básica"
+        },
+        {
+          "id": "producer-3",
+          "name": "Módulo 03",
+          "glyph": "03",
+          "description": "Matriz de fluxo"
+        },
+        {
+          "id": "producer-4",
+          "name": "Módulo 04",
+          "glyph": "04",
+          "description": "Câmara de impulso"
+        },
+        {
+          "id": "producer-5",
+          "name": "Módulo 05",
+          "glyph": "05",
+          "description": "Rede de canais"
+        },
+        {
+          "id": "producer-6",
+          "name": "Módulo 06",
+          "glyph": "06",
+          "description": "Estação de integração"
+        },
+        {
+          "id": "producer-7",
+          "name": "Módulo 07",
+          "glyph": "07",
+          "description": "Núcleo de expansão"
+        },
+        {
+          "id": "producer-8",
+          "name": "Módulo 08",
+          "glyph": "08",
+          "description": "Complexo de convergência"
+        }
+      ]
+    },
+    {
+      "id": "world-3",
+      "name": "Setor 03",
+      "currencyName": "sinais",
+      "prestigeName": "Núcleos",
+      "accentColor": "#A99BE8",
+      "glyph": "03",
+      "producers": [
+        {
+          "id": "producer-1",
+          "name": "Módulo 01",
+          "glyph": "01",
+          "description": "Coleta inicial"
+        },
+        {
+          "id": "producer-2",
+          "name": "Módulo 02",
+          "glyph": "02",
+          "description": "Síntese básica"
+        },
+        {
+          "id": "producer-3",
+          "name": "Módulo 03",
+          "glyph": "03",
+          "description": "Matriz de fluxo"
+        },
+        {
+          "id": "producer-4",
+          "name": "Módulo 04",
+          "glyph": "04",
+          "description": "Câmara de impulso"
+        },
+        {
+          "id": "producer-5",
+          "name": "Módulo 05",
+          "glyph": "05",
+          "description": "Rede de canais"
+        },
+        {
+          "id": "producer-6",
+          "name": "Módulo 06",
+          "glyph": "06",
+          "description": "Estação de integração"
+        },
+        {
+          "id": "producer-7",
+          "name": "Módulo 07",
+          "glyph": "07",
+          "description": "Núcleo de expansão"
+        },
+        {
+          "id": "producer-8",
+          "name": "Módulo 08",
+          "glyph": "08",
+          "description": "Complexo de convergência"
+        }
+      ]
+    }
+  ]
+}
