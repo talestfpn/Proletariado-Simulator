@@ -1,6 +1,16 @@
 {
   "offlineLimitHours": 8,
   "prestigeBonusPerPoint": 0.25,
+  "politics": {
+    "worldId": "world-3",
+    "supportEmissionFactor": 2000,
+    "offices": [
+      { "id": "vereador", "name": "Vereador", "durationSeconds": 600, "moneyCost": "1e6", "supportCost": "100", "productionBonus": 0.1 },
+      { "id": "deputado", "name": "Deputado", "durationSeconds": 720, "moneyCost": "1e8", "supportCost": "400", "productionBonus": 0.15 },
+      { "id": "governador", "name": "Governador", "durationSeconds": 840, "moneyCost": "1e10", "supportCost": "1200", "productionBonus": 0.2 },
+      { "id": "presidente", "name": "Presidente", "durationSeconds": 900, "moneyCost": "1e12", "supportCost": "3000", "productionBonus": 0.3 }
+    ]
+  },
   "worlds": [
     {
       "id": "world-1",

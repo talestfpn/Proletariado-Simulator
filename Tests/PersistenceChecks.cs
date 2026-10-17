@@ -88,7 +88,7 @@ public static class PersistenceChecks
             var store = new SaveStore(directory.Path, definition);
             var engine = store.Load(time).Engine;
             store.Save(engine, time);
-            string futureSave = File.ReadAllText(store.SavePath).Replace("\"Version\": 1", "\"Version\": 2", StringComparison.Ordinal);
+            string futureSave = File.ReadAllText(store.SavePath).Replace($"\"Version\": {SaveStore.CurrentVersion}", $"\"Version\": {SaveStore.CurrentVersion + 1}", StringComparison.Ordinal);
             File.WriteAllText(store.SavePath, futureSave);
             bool rejected = false;
             try { store.Load(time); }
